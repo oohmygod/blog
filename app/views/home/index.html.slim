@@ -1,0 +1,42 @@
+doctype html
+html
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#" xmlns:og="http://ogp.me/ns#">
+
+  head
+    title Slim Examples
+    meta name="keywords" content="template language"
+    meta name="author" content="ekarin prasoppol"
+    javascript:
+      $(document).ready(function() {
+       
+          var div = $('#blueBarHolder');
+          var start = $(div).offset().top;
+       
+          $.event.add(window, "scroll", function() {
+              var p = $(window).scrollTop();
+              $(div).css('position',((p)>start) ? 'fixed' : 'static');
+              $(div).css('top',((p)>start) ? '0px' : '');
+          });
+       
+      });
+
+  body
+
+    #blueBarHolder class="slim"
+      #blueBar class="fixed_elem"
+       
+        #header-content
+        
+     
+    #pn_body
+      = render :partial => "shared/panel_l"
+      #pn_c
+        p This example shows you how a basic Slim file looks like.
+
+      
+
+    div id="footer"
+    
+      | Copyright © 2011 ekarin
+            
